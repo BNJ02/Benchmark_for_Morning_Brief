@@ -167,5 +167,9 @@ cython_debug/
 # Text files
 *.txt
 
-# MP3 files generated
+# Audio files generated
 *.mp3
+*.wav
+
+# Image files
+*.png
