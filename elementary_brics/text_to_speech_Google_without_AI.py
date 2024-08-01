@@ -7,7 +7,21 @@ import matplotlib.pyplot as plt
 
 # Définir le texte à synthétiser
 filename = "output.mp3"
-texte = """Based on the data you provided, here is the weather forecast for Nantes, France."""
+texte = """Neural networks are one of the most beautiful programming paradigms ever invented. 
+In the conventional approach to programming, we tell the computer what to do, breaking big problems up into many small, precisely defined tasks that the computer can easily perform. 
+By contrast, in a neural network we don't tell the computer how to solve our problem. 
+Instead, it learns from observational data, figuring out its own solution to the problem at hand.
+
+Automatically learning from data sounds promising. 
+However, until 2006 we didn't know how to train neural networks to surpass more traditional approaches, except for a few specialized problems. 
+What changed in 2006 was the discovery of techniques for learning in so-called deep neural networks. 
+These techniques are now known as deep learning. 
+They've been developed further, and today deep neural networks and deep learning achieve outstanding performance on many important problems in computer vision, speech recognition, and natural language processing. 
+They're being deployed on a large scale by companies such as Google, Microsoft, and Facebook.
+
+The purpose of this book is to help you master the core concepts of neural networks, including modern techniques for deep learning. 
+After working through the book you will have written code that uses neural networks and deep learning to solve complex pattern recognition problems. 
+And you will have a foundation to use neural networks and deep learning to attack problems of your own devising."""
 
 tts = gTTS(text=texte, lang='en', tld='co.uk')
 tts.save(filename)
