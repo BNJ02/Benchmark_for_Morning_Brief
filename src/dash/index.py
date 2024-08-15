@@ -32,7 +32,7 @@ def fetch_all(requete):
 # Constantes des listes
 jours_list = [row[0] for row in fetch_all("SELECT nom FROM Jours")]
 themes_list = [row[0] for row in fetch_all("SELECT nom FROM Themes")]
-voices_list = [row[0] for row in fetch_all("SELECT nom FROM TypesVoix")]
+voices_list = [row[0] for row in fetch_all("SELECT name FROM TypesVoix")]
 
 
 # Recuperation des infos par jours
@@ -64,7 +64,7 @@ def get_voice_by_jour(nom_jour):
     cursor.execute("SELECT type_voix_id FROM Jours WHERE nom = ?", (nom_jour,))
     type_voix_id = cursor.fetchone()[0]
 
-    cursor.execute("SELECT nom FROM TypesVoix WHERE id = ?", (type_voix_id,))
+    cursor.execute("SELECT name FROM TypesVoix WHERE id = ?", (type_voix_id,))
     result = cursor.fetchone()[0]
 
     close_sql(cursor)
@@ -224,7 +224,7 @@ for jour in jours_list:
         conn, cursor = connect_sql()
 
         # On recupere l'id du type de voix
-        cursor.execute("SELECT id FROM TypesVoix WHERE nom = ?", (value,))
+        cursor.execute("SELECT id FROM TypesVoix WHERE name = ?", (value,))
         # On met a jour l'id dans la table Jours
         cursor.execute("UPDATE Jours SET type_voix_id = ? WHERE nom = ?", (cursor.fetchone()[0], jour_label))
         conn.commit()

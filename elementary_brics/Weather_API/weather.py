@@ -11,8 +11,12 @@ UNITE = "metric"
 
 LIMIT = 5
 
+lat=47.1667
+lon=-1.5833
+
 # L'URL de l'API OpenWeatherMap
-URL = f"http://api.openweathermap.org/data/2.5/weather?q={VILLE}&units={UNITE}&APPID={API_KEY}"
+URL = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&units={UNITE}&appid={API_KEY}"
+# http://api.openweathermap.org/data/2.5/weather?q={VILLE}&units={UNITE}&APPID={API_KEY}
 # http://api.openweathermap.org/geo/1.0/direct?q={VILLE}&limit={LIMIT}&appid={API key}   &limit={LIMIT}
 
 # Récupération des données météo
@@ -22,5 +26,5 @@ donnees = reponse.json()
 print(donnees)
 
 # Écriture des données météo dans un fichier texte
-with open("weather.json", "w") as file:
+with open("weather_overview.json", "w") as file:
     file.write(json.dumps(donnees))

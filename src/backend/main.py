@@ -90,15 +90,18 @@ api_key = os.environ["MISTRAL_API_KEY"]
 
 ##### WEATHER #####
 content = """
-Ce texte sera utiliser ensuite pour une synthèse vocale.
-A partir de ce format dictionnaire, 
-utilise tous les éléments pour réaliser un bilan météo concis avec des commentaires sur les données
-(par exemple : une température ou une humidité anormalement élevé pour la période),
-sachant que l'élément "feels_like" est la température ressentie et que la pression est exprimée en hectoPascal.
-Ne cite pas de noms d'éléments. Arrondie les températures à la décimale. Ecris les unités en toutes lettres.
-Exprime toi en parlant des prévisions de la journée qui arrive
-(nous sommes au tout début de la journée à 6 heures) donc au temps du futur.
-Permets toi de donner des conseils ou des recommandations en fonction des données météo.
+Ce texte sera utiliser ensuite pour une synthèse vocale. 
+A partir de ce format dictionnaire, utilise tous les éléments 
+pour réaliser un bilan météo concis avec des commentaires sur 
+les données (par exemple : une température ou une humidité 
+anormalement élevé pour la période), sachant que l'élément 
+"feels_like" est la température ressentie et que la pression 
+est exprimée en hectoPascal. Ne cite pas de noms d'éléments. 
+Arrondie les températures à la décimale. Ecris les unités en 
+toutes lettres. Exprime toi en parlant des prévisions de la 
+journée qui arrive (nous sommes au tout début de la journée 
+à 6 heures) donc au temps du futur. Permets toi de donner 
+des conseils ou des recommandations en fonction des données météo. 
 """ + json.dumps(filtered_weather_data)
 
 # Params IA
